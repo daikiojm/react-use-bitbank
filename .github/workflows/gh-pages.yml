@@ -20,6 +20,7 @@ jobs:
       - name: Get yarn cache
         id: yarn-cache
         run: echo "::set-output name=dir::$(yarn cache dir)"
+        working-directory: ./examples/demo
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -28,15 +29,17 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+        working-directory: ./examples/demo
 
       - name: Build
         run: |
-          cd ./examples/demo
           yarn install --frozen-lockfile
           yarn build
+        working-directory: ./examples/demo
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+        working-directory: ./examples/demo
