@@ -2,6 +2,16 @@
   "name": "react-use-bitbank",
   "version": "0.1.3",
   "description": "React Hook for bitbank.cc public data",
+  "author": "daikiojm",
+  "repository": "daikiojm/react-use-bitbank",
+  "homepage": "https://github.com/daikiojm/react-use-bitbank#readme",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "react-hooks",
+    "bitbank",
+    "bitbank.cc"
+  ],
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
@@ -15,14 +25,6 @@
     "clear": "cross-env rm -rf dist/",
     "push": "yarn run test && yarn run clear && yarn run build && yarn publish"
   },
-  "repository": "ssh://git@github.com/daikiojm/react-use-bitbank.git",
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "react-hooks",
-    "bitbank",
-    "bitbank.cc"
-  ],
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
