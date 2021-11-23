@@ -9,7 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v2.4.0
@@ -27,10 +28,10 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-        run: |
-          cd ./examples/demo
-          yarn install --frozen-lockfile
-          yarn build
+        run: cd ./examples/demo && yarn install --frozen-lockfile
+
+      - name: Build
+        run: cd ./examples/demo && yarn build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
