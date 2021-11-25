@@ -34,7 +34,7 @@ export const WebsocketProvider: React.FC<OptionsProps> = ({
   const [readyState, setReadyState] = useState<boolean>(false)
 
   useEffect(() => {
-    const client = io(publicWsEndpoint, socketIoOptions)
+    const client = io.connect(publicWsEndpoint, socketIoOptions)
 
     ioRef.current = client
     bindOpenHandler(ioRef.current)
