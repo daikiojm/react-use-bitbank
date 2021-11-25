@@ -1,6 +1,5 @@
 # react-use-bitbank
 
-
 ![npm](https://img.shields.io/npm/v/react-use-bitbank) [![github pages](https://github.com/daikiojm/react-use-bitbank/actions/workflows/gh-pages.yml/badge.svg?branch=main)](https://github.com/daikiojm/react-use-bitbank/actions/workflows/gh-pages.yml)
 
 React hooks to easily integrate [bitbank.cc](http://app.bitbank.cc/) public data into your React application.

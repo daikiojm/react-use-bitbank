@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef, createContext } from 'react'
-import * as io from 'socket.io-client'
+import React, { useState, useEffect, useRef, createContext } from 'react'
+import io from 'socket.io-client'
 
 import { PUBLIC_WS_ENDPOINT, SOCKET_IO_DEFAULT_OPTIONS } from './constants'
 

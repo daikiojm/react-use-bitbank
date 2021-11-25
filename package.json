@@ -1,6 +1,6 @@
 {
   "name": "react-use-bitbank",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React Hook for bitbank.cc public data",
   "author": "daikiojm",
   "repository": "daikiojm/react-use-bitbank",
@@ -30,20 +30,34 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@swc/core": "^1.2.111",
-    "@swc/jest": "^0.2.5",
+    "@swc/core": "^1.2.112",
+    "@swc/jest": "^0.2.9",
+    "@testing-library/jest-dom": "^5.15.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.3",
-    "@types/react": "^17.0.36",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
     "@types/socket.io-client": "^1.4.36",
     "cross-env": "^7.0.3",
     "jest": "^27.3.1",
     "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "socket.io-mock": "^1.3.2",
     "typescript": "^4.5.2"
   },
   "jest": {
     "transform": {
-      "\\.[jt]sx?$": "@swc/jest"
-    }
+      "^.+\\.(t|j)sx?$": [
+        "@swc/jest"
+      ]
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "testEnvironment": "jsdom"
   },
   "prettier": {
     "printWidth": 140,
