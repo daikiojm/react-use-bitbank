@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, createContext } from 'react'
-import io from 'socket.io-client'
+import * as io from 'socket.io-client'
 
 import { PUBLIC_WS_ENDPOINT, SOCKET_IO_DEFAULT_OPTIONS } from './constants'
 
@@ -34,7 +34,7 @@ export const WebsocketProvider: React.FC<OptionsProps> = ({
   const [readyState, setReadyState] = useState<boolean>(false)
 
   useEffect(() => {
-    const client = io.connect(publicWsEndpoint, socketIoOptions)
+    const client = io(publicWsEndpoint, socketIoOptions)
 
     ioRef.current = client
     bindOpenHandler(ioRef.current)

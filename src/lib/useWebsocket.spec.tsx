@@ -1,7 +1,8 @@
 import { act, renderHook } from '@testing-library/react-hooks'
-import * as React from 'react'
-import socketIOClient from 'socket.io-client'
-import MockedSocket from 'socket.io-mock'
+import React from 'react'
+import * as socketIOClient from 'socket.io-client'
+// @ts-ignore
+import * as MockedSocket from 'socket.io-mock'
 
 jest.mock('socket.io-client')
 
@@ -14,7 +15,7 @@ test('useWebsocket return default value', async () => {
   const socket = new MockedSocket()
   ;(socketIOClient as unknown as jest.Mock).mockReturnValue(socket)
 
-  const wrapper = ({ children }) => <WebsocketProvider>{children}</WebsocketProvider>
+  const wrapper: React.FC = ({ children }) => <WebsocketProvider>{children}</WebsocketProvider>
   const { result } = renderHook(() => useWebsocket(), { wrapper })
   expect(result.error).toBe(undefined)
   expect(result.current.readyState).toBe(false)
@@ -24,7 +25,7 @@ test('useWebsocket return ready state when socket connected', async () => {
   const socket = new MockedSocket()
   ;(socketIOClient as unknown as jest.Mock).mockReturnValue(socket)
 
-  const wrapper = ({ children }) => <WebsocketProvider publicWsEndpoint={mockServerEndpoint}>{children}</WebsocketProvider>
+  const wrapper: React.FC = ({ children }) => <WebsocketProvider publicWsEndpoint={mockServerEndpoint}>{children}</WebsocketProvider>
   const { result } = renderHook(() => useWebsocket(), { wrapper })
   act(() => {
     socket.socketClient.emit('connect')
