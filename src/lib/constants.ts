@@ -8,7 +8,7 @@ export const SOCKET_IO_DEFAULT_OPTIONS: SocketIOClient.ConnectOpts = {
 }
 
 export const BASE_CURRENCIES = ['btc', 'jpy'] as const
-export const QUOTE_CURRENCIES = ['btc', 'xrp', 'ltc', 'eth', 'mona', 'bcc', 'xlm', 'qtum', 'bat', 'omg', 'xym'] as const
+export const QUOTE_CURRENCIES = ['btc', 'xrp', 'ltc', 'eth', 'mona', 'bcc', 'xlm', 'qtum', 'bat', 'omg', 'xym', 'link'] as const
 
 export const PUBLIC_API_PATHS = {
   TICKER: 'ticker',
