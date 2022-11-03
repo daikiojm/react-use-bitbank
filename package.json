@@ -1,6 +1,6 @@
 {
   "name": "react-use-bitbank",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React Hook for bitbank.cc public data",
   "author": "daikiojm",
   "repository": "daikiojm/react-use-bitbank",
