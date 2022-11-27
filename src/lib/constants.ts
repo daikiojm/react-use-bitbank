@@ -29,6 +29,7 @@ export const QUOTE_CURRENCIES = [
   'enj',
   'astr',
   'ada',
+  'avax',
 ] as const
 
 export const PUBLIC_API_PATHS = {
