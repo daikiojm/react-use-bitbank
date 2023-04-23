@@ -7,7 +7,8 @@ export const SOCKET_IO_DEFAULT_OPTIONS: SocketIOClient.ConnectOpts = {
   transports: ['websocket'],
 }
 
-export const BASE_CURRENCIES = ['btc', 'jpy'] as const
+export const BASE_CURRENCIES = ['jpy'] as const
+// see: https://github.com/bitbankinc/bitbank-api-docs/blob/master/assets.md
 export const QUOTE_CURRENCIES = [
   'btc',
   'xrp',
@@ -30,6 +31,14 @@ export const QUOTE_CURRENCIES = [
   'astr',
   'ada',
   'avax',
+  'axs',
+  'flr',
+  'sand',
+  'gala',
+  'ape',
+  'chz',
+  'oas',
+  'mana',
 ] as const
 
 export const PUBLIC_API_PATHS = {
